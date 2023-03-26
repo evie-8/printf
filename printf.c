@@ -47,9 +47,3 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (j);
 }
-int main(void)
-{
-	int t = _printf("life is short");
-	prints_int(t);
-	return (0);
-}
