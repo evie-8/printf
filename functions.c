@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include "main.h"
+#include <stddef.h>
 /**
  * _putchar - output a character
  * @c: character to be printed
@@ -12,13 +13,18 @@ int _putchar(char c)
 /**
  * prints_string - prints a string
  * @str: string to be printed
+ * Return: string length
  */
-void prints_string(char *str)
+int prints_string(char *str)
 {
+	int i = 0;
+
 	if (*str == '\0')
-		return;
+		return (0);
 	_putchar(*str);
-	prints_string(str + 1);
+	i += prints_string(str + 1);
+	i++;
+	return (i);
 }
 /**
  * prints_int - prints string
