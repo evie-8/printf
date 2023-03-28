@@ -10,3 +10,7 @@
 - Handle conversion specifier S.
 - Handle conversion specifier p.
 -  Handle flag characters +, space, and # for non-custom conversion specifiers
+- Handle length modifiers l and h for non-custom conversion specifiers
+-  Handle the field width for non-custom conversion specifiers
+-  Handle the precision for non-custom conversion specifiers.
+
