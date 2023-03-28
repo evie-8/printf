@@ -25,6 +25,7 @@ int (*pick_func(char c))(va_list list)
 		{"d", print_digit},
 		{"i", print_digit},
 		{"%", print_perc},
+		{"r", print_rev},
 		{NULL, NULL}
 	};
 
