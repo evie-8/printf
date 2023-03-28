@@ -27,6 +27,7 @@ int octal(va_list);
 int octal1(unsigned int);
 int _unsign(unsigned int);
 int _unsigned_int(va_list);
+int S_format(va_list);
 
 /**
  * struct prints - struct

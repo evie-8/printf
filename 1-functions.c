@@ -61,6 +61,7 @@ int (*pick_func(char c))(va_list list)
 		{"X", hexa_upper},
 		{"o", octal},
 		{"u", _unsigned_int},
+		{"S", S_format},
 		{NULL, NULL}
 	};
 
