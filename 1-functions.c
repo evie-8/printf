@@ -57,6 +57,10 @@ int (*pick_func(char c))(va_list list)
 		{"R", rot_13},
 		{"p", print_address},
 		{"b", to_binary},
+		{"x", hexa_lower},
+		{"X", hexa_upper},
+		{"o", octal},
+		{"u", _unsigned_int},
 		{NULL, NULL}
 	};
 

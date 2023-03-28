@@ -20,6 +20,13 @@ int hex_low(unsigned long int);
 int print_address(va_list);
 int to_binary(va_list);
 int binary(unsigned int);
+int hex_upper(unsigned long int);
+int hexa_upper(va_list);
+int hexa_lower(va_list);
+int octal(va_list);
+int octal1(unsigned int);
+int _unsign(unsigned int);
+int _unsigned_int(va_list);
 
 /**
  * struct prints - struct
