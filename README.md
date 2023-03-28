@@ -17,3 +17,7 @@
 - Handle the custom conversion specifier r that prints the reversed string
 -  Handle the custom conversion specifier R that prints the rot13'ed string
 -  All above options should work well together.
+## Collaborators of the project 
+- Ejiabor Ifeoma Maryjane
+- Nafula Evelyn Ouma.
+
