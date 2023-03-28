@@ -55,6 +55,7 @@ int (*pick_func(char c))(va_list list)
 		{"%", print_perc},
 		{"r", print_rev},
 		{"R", rot_13},
+		{"p", print_address},
 		{NULL, NULL}
 	};
 
@@ -64,4 +65,30 @@ int (*pick_func(char c))(va_list list)
 			return (prin[i].func);
 	}
 	return (NULL);
+}
+
+/**
+ * print_address - prints address
+ * @list: contains arguments
+ * Return: length
+ */
+int print_address(va_list list)
+{
+	char *s = "(nil)";
+	int a, i;
+	void *pointer;
+	long int address;
+
+	pointer = va_arg(list, void *);
+	if (pointer == NULL)
+	{
+		for (i = 0; s[i] != '\0'; i++)
+			_putchar(s[i]);
+		return (i);
+	}
+	address = (unsigned long int)pointer;
+	_putchar('0');
+	_putchar('x');
+	a = hex_low(address);
+	return (a + 2);
 }

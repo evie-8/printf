@@ -16,6 +16,8 @@ int str_len(char *);
 int print_int(int n);
 int (*pick_func(char c))(va_list);
 int rot_13(va_list);
+int hex_low(unsigned long int);
+int print_address(va_list);
 
 /**
  * struct prints - struct
