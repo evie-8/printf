@@ -19,22 +19,22 @@ int str_len(char *s)
  */
 int print_int(int n)
 {
-	int x, i = 0, y;
+	int i = 0;
+	unsigned int num;
 
+	num = n;
 	if (n < 0)
 	{
 		i += _putchar('-');
-		n = n * (-1);
+		num = -num;
 	}
-	x = n % 10;
-	y = n / 10;
-	if (y == 0)
+	if (num == 0)
 	{
-		i = _putchar(x + '0');
+		i += _putchar('0');
 		return (i);
 	}
-	i = print_int(y);
-	i++;
-	_putchar(x + '0');
+	if (num / 10)
+		i += print_int(num / 10);
+	i += _putchar(num % 10 + '0');
 	return (i);
 }
