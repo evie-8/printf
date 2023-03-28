@@ -16,14 +16,14 @@ int str_len(char *);
 int print_int(int n);
 int (*pick_func(char c))(va_list);
 /**
- * struct fmt - struct
+ * struct prints - struct
  * @p: pointer
  * @func: function pointer
  */
 typedef struct prints
 {
 	char *p;
-	int(*func)(va_list);
-}print_t;
+	int (*func)(va_list);
+} print_t;
 
 #endif
