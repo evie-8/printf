@@ -60,6 +60,7 @@ int print_rev(va_list list)
 {
 	char *s = va_arg(list, char *);
 	int i = str_len(s);
+	int x = i;
 
 	i--;
 	while (i >= 0)
@@ -67,5 +68,5 @@ int print_rev(va_list list)
 		_putchar(s[i]);
 		i--;
 	}
-	return (0);
+	return (x);
 }
