@@ -56,6 +56,7 @@ int (*pick_func(char c))(va_list list)
 		{"r", print_rev},
 		{"R", rot_13},
 		{"p", print_address},
+		{"b", to_binary},
 		{NULL, NULL}
 	};
 
@@ -91,4 +92,17 @@ int print_address(va_list list)
 	_putchar('x');
 	a = hex_low(address);
 	return (a + 2);
+}
+/**
+ * to_binary - converts to binary
+ * @list: contains arguments
+ * Return: length
+ */
+int to_binary(va_list list)
+{
+	unsigned int x = va_arg(list, unsigned int);
+	int y;
+
+	y = binary(x);
+	return (y);
 }

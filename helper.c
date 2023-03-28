@@ -73,3 +73,36 @@ int hex_low(unsigned long int n)
 	free(arr);
 	return (count);
 }
+
+/**
+ * binary - prints number in binary
+ * @n: number
+ * Return: length
+ */
+int binary(unsigned int n)
+{
+	int i, *arr, count = 0;
+	unsigned int num;
+
+	num = n;
+	while (n / 2 != 0)
+	{
+		n /= 2;
+		count++;
+	}
+	count++;
+	arr = malloc(sizeof(int) * count);
+	if (arr == NULL)
+		return (0);
+	for (i = 0; i < count; i++)
+	{
+		arr[i] = num % 2;
+		num = num / 2;
+	}
+	for (i = count - 1; i >= 0; i--)
+	{
+		_putchar(arr[i] + '0');
+	}
+	free(arr);
+	return (count);
+}

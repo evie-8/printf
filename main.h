@@ -18,6 +18,8 @@ int (*pick_func(char c))(va_list);
 int rot_13(va_list);
 int hex_low(unsigned long int);
 int print_address(va_list);
+int to_binary(va_list);
+int binary(unsigned int);
 
 /**
  * struct prints - struct
