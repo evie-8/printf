@@ -1,50 +1,38 @@
-#include <stdarg.h>
 #include "main.h"
-#include <stddef.h>
 /**
- * _printf - emulates printf
- * @format: string passed
- * Return: number of characters in string
+ * _printf - emulates printf function
+ * @format: string
+ * Return: string length
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0;
-	char *s;
-	va_list args;
+	va_list list;
+	int count = 0, i = -1;
+	int (*f)(va_list);
 
-	va_start(args, format);
-	while (format != NULL && format[i] != '\0')
-	{
-		if (format[i] == '%')
+	va_start(list, format);
+		if (format != NULL)
 		{
-			switch (format[++i])
+			i = 0;
+			for (; format[count] != '\0'; i++, count++)
 			{
-				case 'c':
-				_putchar((char)va_arg(args, int));
-				i++;
-				j++;
-				break;
-				case 's':
-				s = va_arg(args, char *);
-				if (s == NULL)
-					s = "(null)";
-				j += prints_string(s);
-				i++;
-				break;
-				case '%':
-				_putchar('%');
-				i++;
-				j++;
-				break;
+				if (format[count] != '%')
+					_putchar(format[count]);
+				else if (format[count] == '%' && format[count + 1] == '\0')
+					return (-1);
+				else if (format[count] == '%' && format[count + 1] != '\0')
+				{
+					f = pick_func(format[count + 1]);
+					if (f == NULL)
+						_putchar(format[count]);
+					else
+					{
+						i = (i + f(list)) - 1;
+						count++;
+					}
+				}
 			}
 		}
-		else
-		{
-			_putchar(format[i]);
-			i++;
-			j++;
-		}
-	}
-	va_end(args);
-	return (j);
+		va_end(list);
+		return (i);
 }
